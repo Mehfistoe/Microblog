@@ -7,7 +7,7 @@
     <p>
       {{ form.username.label }}<br>
       {{ form.username(size=32) }}<br>
-      {% from error in form.username.errors %}
+      {% for error in form.username.errors %}
       <span style="color: red;">[{{ error }}]</span>
       {% endfor %}
     </p>
@@ -23,6 +23,13 @@
       {{ form.password(size=32) }}<br>
       {% for error in form.password2.errors %}
       <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+    <p>
+      {{ form.password2.label }}<br>
+      {{ form.password2(size=32) }}<br>
+      {% for error in form.password2.errors %}
+      <span style="color: red;">[{{ error}}]</span>
       {% endfor %}
     </p>
     <p>{{ form.submit() }}</p>
