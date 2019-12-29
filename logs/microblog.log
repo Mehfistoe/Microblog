@@ -1,5 +1,4 @@
-2019-12-25 22:10:26,756 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:49]
-2019-12-25 22:10:56,901 ERROR: Exception on /register [GET] [in /home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+2019-12-28 20:40:54,317 ERROR: Exception on /edit_profile [GET] [in /home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -13,49 +12,17 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/mckenzie/Projects/microblog/app/routes.py", line 64, in register
-    return render_template('register.html', title='Register', form=form)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
-    reraise(exc_type, exc_value, tb)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
-    raise value.with_traceback(tb)
-  File "/home/mckenzie/Projects/microblog/app/templates/register.html", line 10, in template
-    {% from error in form.username.errors %}
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 268, in parse_block
-    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 307, in parse_from
-    self.stream.expect('name:import')
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/lexer.py", line 384, in expect
-    self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: expected token 'import', got 'end of statement block'
-2019-12-25 22:16:06,848 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:49]
-2019-12-25 22:16:17,524 ERROR: Exception on /register [GET] [in /home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/mckenzie/Projects/microblog/app/routes.py", line 89, in edit_profile
+    form = EditProfileForm(current_user.username)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/wtforms/form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/home/mckenzie/Projects/microblog/app/forms.py", line 40, in __init__
+    super(EditProfileForm, self).__init__(*args, **kwargs)
+NameError: name 'args' is not defined
+2019-12-28 20:50:38,016 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:47]
+2019-12-28 20:51:22,738 ERROR: Exception on /edit_profile [GET] [in /home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
     response = self.full_dispatch_request()
@@ -69,45 +36,92 @@ Traceback (most recent call last):
     rv = self.dispatch_request()
   File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
     return self.view_functions[rule.endpoint](**req.view_args)
-  File "/home/mckenzie/Projects/microblog/app/routes.py", line 64, in register
-    return render_template('register.html', title='Register', form=form)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 138, in render_template
-    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 869, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 830, in get_template
-    return self._load_template(name, self.make_globals(globals))
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 804, in _load_template
-    template = self.loader.load(self, name, globals)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/loaders.py", line 125, in load
-    code = environment.compile(source, name, filename)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 591, in compile
-    self.handle_exception(exc_info, source_hint=source_hint)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/mckenzie/Projects/microblog/app/routes.py", line 98, in edit_profile
+    form.about_me.data = current_user.about_me
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/werkzeug/local.py", line 348, in __getattr__
+    return getattr(self._get_current_object(), name)
+AttributeError: 'User' object has no attribute 'about_me'
+2019-12-28 20:58:18,426 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:47]
+2019-12-28 20:58:22,174 ERROR: Exception on /index [GET] [in /home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1249, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such column: user.about_me
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
     reraise(exc_type, exc_value, tb)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1947, in full_dispatch_request
+    rv = self.preprocess_request()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2241, in preprocess_request
+    rv = func()
+  File "/home/mckenzie/Projects/microblog/app/routes.py", line 12, in before_request
+    if current_user.is_authenticated:
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/werkzeug/local.py", line 348, in __getattr__
+    return getattr(self._get_current_object(), name)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/werkzeug/local.py", line 307, in _get_current_object
+    return self.__local()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 26, in <lambda>
+    current_user = LocalProxy(lambda: _get_user())
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 335, in _get_user
+    current_app.login_manager._load_user()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask_login/login_manager.py", line 359, in _load_user
+    return self.reload_user()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask_login/login_manager.py", line 321, in reload_user
+    user = self.user_callback(user_id)
+  File "/home/mckenzie/Projects/microblog/app/models.py", line 66, in load_user
+    return User.query.get(int(id))
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 959, in get
+    return self._get_impl(ident, loading.load_on_pk_identity)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 1069, in _get_impl
+    return db_load_fn(self, primary_key_identity)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/loading.py", line 282, in load_on_pk_identity
+    return q.one()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3292, in one
+    ret = self.one_or_none()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3261, in one_or_none
+    ret = list(self)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3334, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/orm/query.py", line 3359, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 988, in execute
+    return meth(self, multiparams, params)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/sql/elements.py", line 287, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1107, in _execute_clauseelement
+    distilled_params,
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1253, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1473, in _handle_dbapi_exception
+    util.raise_from_cause(sqlalchemy_exception, exc_info)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 398, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/util/compat.py", line 152, in reraise
     raise value.with_traceback(tb)
-  File "/home/mckenzie/Projects/microblog/app/templates/register.html", line 10, in template
-    {% from error in form.username.errors %}
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 497, in _parse
-    return Parser(self, source, name, encode_filename(filename)).parse()
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 901, in parse
-    result = nodes.Template(self.subparse(), lineno=1)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 268, in parse_block
-    node.body = self.parse_statements(('name:endblock',), drop_needle=True)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 165, in parse_statements
-    result = self.subparse(end_tokens)
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 883, in subparse
-    rv = self.parse_statement()
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 130, in parse_statement
-    return getattr(self, 'parse_' + self.stream.current.value)()
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/parser.py", line 307, in parse_from
-    self.stream.expect('name:import')
-  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/lexer.py", line 384, in expect
-    self.name, self.filename)
-jinja2.exceptions.TemplateSyntaxError: expected token 'import', got 'end of statement block'
-2019-12-25 22:17:36,519 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:49]
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/base.py", line 1249, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/sqlalchemy/engine/default.py", line 552, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such column: user.about_me
+[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
+FROM user 
+WHERE user.id = ?]
+[parameters: (2,)]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2019-12-28 20:59:45,171 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:47]
+2019-12-28 20:59:55,569 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:47]
+2019-12-28 21:00:10,678 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:47]
+2019-12-28 21:01:33,637 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:47]

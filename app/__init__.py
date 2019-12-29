@@ -19,8 +19,6 @@ login = LoginManager(app)
 # 'login' is the endpoint name for the login view
 login.login_view = 'login'
 
-from app import routes, models, errors
-
 if not app.debug:
     if app.config['MAIL_SERVER']:
         auth = None
@@ -47,4 +45,6 @@ if not app.debug:
 
     app.logger.setLevel(logging.INFO)
     app.logger.info('Microblog startup')
+
+from app import routes, models, errors
 

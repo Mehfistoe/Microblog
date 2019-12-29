@@ -1,5 +1,4 @@
 import os
-
 # says to work in the directory this Python file is in
 basedir = os.path.abspath(os.path.dirname(__file__))
 

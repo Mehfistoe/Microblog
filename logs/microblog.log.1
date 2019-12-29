@@ -1,0 +1,109 @@
+2019-12-28 18:13:48,780 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:49]
+2019-12-28 18:22:02,000 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:49]
+2019-12-28 18:22:12,840 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:49]
+2019-12-28 18:23:00,033 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:49]
+2019-12-28 18:24:02,114 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:49]
+2019-12-28 19:37:15,788 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:49]
+2019-12-28 19:37:58,578 ERROR: Exception on /register [POST] [in /home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/mckenzie/Projects/microblog/app/routes.py", line 58, in register
+    user = User(username=form.username.date, email=form.email.data)
+AttributeError: 'StringField' object has no attribute 'date'
+2019-12-28 19:49:15,017 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:49]
+2019-12-28 19:49:34,521 ERROR: Exception on /register [POST] [in /home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/mckenzie/Projects/microblog/app/routes.py", line 66, in register
+    user = User(username=form.username.date, email=form.email.data)
+AttributeError: 'StringField' object has no attribute 'date'
+2019-12-28 19:53:17,252 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:49]
+2019-12-28 20:33:17,444 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:47]
+2019-12-28 20:34:12,910 ERROR: Exception on /user/nicholas [GET] [in /home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/mckenzie/Projects/microblog/app/routes.py", line 83, in user
+    return render_template('user.html', user=user, posts=posts)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 140, in render_template
+    ctx.app,
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/asyncsupport.py", line 76, in render
+    return original_render(self, *args, **kwargs)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 1008, in render
+    return self.environment.handle_exception(exc_info, True)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/jinja2/_compat.py", line 37, in reraise
+    raise value.with_traceback(tb)
+  File "/home/mckenzie/Projects/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/mckenzie/Projects/microblog/app/templates/base.html", line 28, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/mckenzie/Projects/microblog/app/templates/user.html", line 24, in block "content"
+    {% include '_post.html' %}
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 60, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/templating.py", line 89, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: _post.html
+2019-12-28 20:38:05,990 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:47]
+2019-12-28 20:39:44,638 INFO: Microblog startup [in /home/mckenzie/Projects/microblog/app/__init__.py:47]
+2019-12-28 20:40:21,586 ERROR: Exception on /edit_profile [GET] [in /home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 2446, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1951, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1820, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1949, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask/app.py", line 1935, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/flask_login/utils.py", line 261, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/mckenzie/Projects/microblog/app/routes.py", line 89, in edit_profile
+    form = EditProfileForm(current_user.username)
+  File "/home/mckenzie/Projects/microblog/venv/lib/python3.6/site-packages/wtforms/form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/home/mckenzie/Projects/microblog/app/forms.py", line 40, in __init__
+    super(EditProfileForm, self).__init__(*args, **kwargs)
+NameError: name 'args' is not defined
